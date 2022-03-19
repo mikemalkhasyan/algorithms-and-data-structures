@@ -3,5 +3,5 @@ The following recursion function serves for flattening arrays and has O(N) linea
 
 # Run test cases
 ```bash
-node flattening-an-array
+node index
 ```
