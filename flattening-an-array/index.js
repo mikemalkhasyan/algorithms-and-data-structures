@@ -1,19 +1,12 @@
 const assert = require("assert");
 
 // flattenLinear recursion function has linear O(N) complexity for flattening an array
-function flattenLinear(items) {
-    const flat = []
-
-    function inner(input) {
-        if (Array.isArray(input)) {
-            input.forEach(inner)
-        } else {
-            flat.push(input)
-        }
+function flattenLinear(items, flat = []) {
+    if (Array.isArray(items)) {
+        items.forEach((item) => flattenLinear(item, flat))
+    } else {
+        flat.push(items)
     }
-
-    // init call
-    inner(items)
 
     return flat
 }
